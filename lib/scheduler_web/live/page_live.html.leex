@@ -1,0 +1,20 @@
+<%= f = form_for @changeset, "#", phx_submit: "insert-availability" %>
+
+<%= label f, :week_day %>
+<%= select f, :week_day, ["Monday": 1, "Tuesday": 2], prompt: "Choose one" %>
+<%= error_tag f, :week_day %>
+
+<%= label f, :from %>
+<%= time_input f, :from %>
+<%= error_tag f, :from %>
+
+<%= label f, :to %>
+<%= time_input f, :to %>
+<%= error_tag f, :to %>
+
+<%= label f, :ps %>
+<%= text_input f, :ps %>
+<%= error_tag f, :ps %>
+
+<%= submit "Add Schudle", phx_disable_with: "creating..." %>
+</form>
