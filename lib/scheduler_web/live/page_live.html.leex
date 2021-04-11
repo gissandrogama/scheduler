@@ -1,4 +1,4 @@
-<%= f = form_for @changeset, "#", phx_submit: "insert-availability" %>
+<%= f = form_for @changeset, "#", phx_submit: "create" %>
 
 <%= label f, :week_day %>
 <%= select f, :week_day, ["Monday": 1, "Tuesday": 2], prompt: "Choose one" %>
