@@ -10,7 +10,6 @@ defmodule Scheduler.Availabilities.Availability do
     |> validate_required([:ps, :week_day])
     |> validate_exclusion(:week_day, keys(availabilities), message: "you can't repeat this day")
     |> validate_length(:ps, min: 5, max: 20)
-    |> IO.inspect()
   end
 
   defp keys(availabilities), do: Map.keys(availabilities)
