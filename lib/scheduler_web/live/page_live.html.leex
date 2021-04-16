@@ -1,4 +1,4 @@
-<%= f = form_for @changeset, "#", phx_submit: "create" %>
+<%= f = form_for @changeset, "#", phx_change: "validate", phx_submit: "create" %>
 
 <%= label f, :week_day %>
 <%= select f, :week_day, ["Monday": 1, "Tuesday": 2], prompt: "Choose one" %>
@@ -18,3 +18,9 @@
 
 <%= submit "Add Schudle", phx_disable_with: "creating..." %>
 </form>
+
+<ul>
+  <%= for {week_day, availability} <- @availabilities do %>
+    <li><%= week_day %> - from: 123, 123</li>
+  <% end %>
+</ul>
