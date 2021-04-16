@@ -4,7 +4,7 @@ defmodule Scheduler.Availabilities.Availability do
   @types %{week_day: :integer, from: :integer, to: :integer, ps: :string}
   def new, do: %__MODULE__{}
 
-  def changeset(params, availabilities) do
+  def changeset(availabilities, params) do
     {new(), @types}
     |> cast(params, keys())
     |> validate_required([:ps, :week_day])
