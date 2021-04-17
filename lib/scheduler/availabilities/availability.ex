@@ -1,7 +1,7 @@
 defmodule Scheduler.Availabilities.Availability do
   import Ecto.Changeset
   defstruct ~W/week_day from to ps/a
-  @types %{week_day: :integer, from: :integer, to: :integer, ps: :string}
+  @types %{week_day: :integer, from: :string, to: :string, ps: :string}
   def new, do: %__MODULE__{}
 
   def changeset(availabilities, params) do
