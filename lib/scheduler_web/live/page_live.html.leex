@@ -1,7 +1,7 @@
 <%= f = form_for @changeset, "#", phx_change: "validate", phx_submit: "create" %>
 
 <%= label f, :week_day %>
-<%= select f, :week_day, ["Monday": 1, "Tuesday": 2], prompt: "Choose one" %>
+<%= select f, :week_day, week_day_list(), prompt: "Choose one" %>
 <%= error_tag f, :week_day %>
 
 <%= label f, :from %>
@@ -21,6 +21,6 @@
 
 <ul>
   <%= for {week_day, availability} <- @availabilities do %>
-    <li><%= week_day %> - from: 123, 123</li>
+    <li><%= get_day(week_day) %> - from: <%= availability["from"] %>, - <%= availability["to"] %></li>
   <% end %>
 </ul>

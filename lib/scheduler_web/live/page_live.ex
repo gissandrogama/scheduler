@@ -23,6 +23,9 @@ defmodule SchedulerWeb.PageLive do
       assign(socket, changeset: changeset)
   end
 
+  defp week_day_list, do: Availabilities.week_day_list()
+  defp get_day(number), do: Availabilities.get_day(number)
+
   defp add_availability(socket, availability) do
     if socket.assigns.changeset.valid?() do
       availabilities = socket.assigns.availabilities
